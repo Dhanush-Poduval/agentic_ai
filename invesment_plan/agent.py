@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 
+from fin_agent.agent import finance_agent
 from google.adk.agents import LlmAgent
 from google.adk.tools import google_search
 investment_agent=LlmAgent(
@@ -13,7 +14,8 @@ investment_agent=LlmAgent(
 2)Using the keywords found calculate the required result to the nearest decimal
 3)Check the result found once more and display it as the result in a friendly manner
 ''',
-tools=[google_search]
+tools=[google_search],
+sub_agents=[finance_agent],
 
 )
 root_agent=investment_agent

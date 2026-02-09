@@ -11,7 +11,7 @@ finance_agent=LlmAgent(
      2)Answer the quiestion with required  answer 
      ''',
       
-     tools=[google_search]
+     
 
     )
 root_agent=finance_agent
