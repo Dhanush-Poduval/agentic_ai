@@ -1,17 +1,21 @@
-from google.adk.agents import LlmAgent
-from google.adk.agents import googlesearch
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
+from google.adk.agents import LlmAgent
+from google.adk.tools import google_search
 investment_agent=LlmAgent(
     name='investment_agent',
     description='Help in the investement works of the user',
     model='gemini-2.5-flash',
-    description='''You are a friendly agent and help the use in investment banking related tasks 
+    instruction='''You are a friendly agent and help the use in investment banking related tasks 
 1)Take the input from the user and look for its key words like the overall amount and the rate of interest
 2)Using the keywords found calculate the required result to the nearest decimal
 3)Check the result found once more and display it as the result in a friendly manner
-'''
-
+''',
+tools=[google_search]
 
 )
+root_agent=investment_agent
 
 

@@ -1,6 +1,5 @@
 from dotenv import load_dotenv
 import os
-#from /home/dhanush/Desktop/agentic_ai/invesment_plan/agent.py import investment_agent
 load_dotenv()
 from google.adk.agents import LlmAgent
 from google.adk.tools import google_search
